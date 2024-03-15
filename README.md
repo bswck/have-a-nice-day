@@ -6,5 +6,5 @@ I do them manually.
 
 Feel free to silence this repo in `👁 Watch` options if you don't want to receive release notifications in your GitHub dashboard.
 
-And, most importantly, have a nice day!
+And, most importantly, have a nice day!<br>
 ~ [@bswck](https://github.com/bswck)
