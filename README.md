@@ -43,10 +43,10 @@ motd_release() {
   gh release create "$(date -I)" --notes "$(cat "$(date -I).md")"
 }
 
-wish() {
+motd() {
   motd_write "$1" && motd_tag && motd_release
 }
 
 # Example:
-wish "Have a nice $(date +%A) everyone! 🚀"
+motd "Have a nice $(date +%A) everyone! 🚀"
 ```
