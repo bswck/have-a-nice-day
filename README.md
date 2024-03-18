@@ -21,5 +21,5 @@ git push
 git tag -sfa "$(date -I)" -m "$(date +%A) wishes"
 git push --tags
 
-gh release create "$(date -I)" --notes "$(date +%A) wishes"
+gh release create "$(date -I)" --notes "$(cat "$(date -I).md")"
 ```
