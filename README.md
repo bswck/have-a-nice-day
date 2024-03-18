@@ -23,3 +23,30 @@ git push --tags
 
 gh release create "$(date -I)" --notes "$(cat "$(date -I).md")"
 ```
+
+The whole routine can be semi-automated:
+
+```bash
+motd_write() {
+  echo "$1" > "$(date -I).md"
+  git commit -am "$(date +%A) wishes"
+  git push
+}
+
+motd_tag() {
+  # Sometimes I need to overwrite a tag if I make a typo, so I use the `-f` flag by default
+  git tag -sfa "$(date -I)" -m "$(date +%A) wishes"
+  git push --tags
+}
+
+motd_release() {
+  gh release create "$(date -I)" --notes "$(cat "$(date -I).md")"
+}
+
+wish() {
+  motd_write "$1" && motd_tag && motd_release
+}
+
+# Example:
+wish "Have a nice $(date +%A) everyone! 🚀"
+```
