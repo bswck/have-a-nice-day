@@ -14,7 +14,8 @@ First, I write down my wishes in the proper file. I commit the file and push it,
 
 ```bash
 echo "Hello world, have a great day!" > "$(date -I).md"
-git commit -am "$(date +%A) wishes"
+git add -A
+git commit -m "$(date +%A) wishes"
 git push
 
 # Sometimes I need to overwrite a tag if I make a typo, so I use the `-f` flag by default
@@ -29,7 +30,8 @@ The whole routine can be semi-automated:
 ```bash
 motd_write() {
   echo "$1" > "$(date -I).md"
-  git commit -am "$(date +%A) wishes"
+  git add -A
+  git commit -m "$(date +%A) wishes"
   git push
 }
 
